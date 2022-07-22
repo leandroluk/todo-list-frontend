@@ -5,13 +5,12 @@ import { TodosList } from '../molecules'
 import { TodosForm } from '../organisms'
 import { CenterColumnLayout } from '../templates'
 
-export function TodosPage() {
+export function TodosPage () {
   const todosState = todosStore()
   const toast = useToast()
 
   useEffect(() => {
     if (todosState.error) {
-      console.log(todosState.error)
       toast({
         description: todosState.error.message,
         status: 'error',
